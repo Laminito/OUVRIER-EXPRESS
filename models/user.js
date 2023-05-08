@@ -45,8 +45,12 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-
         roles: {
+            type: DataTypes.ARRAY(DataTypes.STRING),
+            allowNull: false,
+        }
+
+        /* roles: {
             type: DataTypes.STRING,
             allowNull: false,
             get() {
@@ -55,7 +59,7 @@ module.exports = (sequelize, DataTypes) => {
             set(val) {
                 this.setDataValue('favColors', val.join(';'));
             },
-        }
+        } */
     }, {
         sequelize,
         modelName: 'User',

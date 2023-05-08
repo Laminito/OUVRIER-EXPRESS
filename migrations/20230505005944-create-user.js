@@ -40,15 +40,19 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false
             },
+            /*  roles: {
+                 type: Sequelize.STRING,
+                 allowNull: false,
+                 get() {
+                     return this.getDataValue('roles').split(';')
+                 },
+                 set(val) {
+                     this.setDataValue('roles', val.join(';'));
+                 },
+             }, */
             roles: {
-                type: Sequelize.STRING,
+                type: Sequelize.ARRAY(Sequelize.STRING),
                 allowNull: false,
-                get() {
-                    return this.getDataValue('roles').split(';')
-                },
-                set(val) {
-                    this.setDataValue('roles', val.join(';'));
-                },
             },
             createdAt: {
                 allowNull: false,
