@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
          */
         static associate(models) {
             // define association here
+            this.hasMany(models.User_Statut);
+
         }
     }
     User.init({
@@ -18,7 +20,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-
         nom: {
             type: DataTypes.STRING,
             allowNull: false
@@ -26,6 +27,9 @@ module.exports = (sequelize, DataTypes) => {
         telephone: {
             type: DataTypes.STRING,
             allowNull: false
+        },
+        email: {
+            type: DataTypes.STRING
         },
         cni: {
             type: DataTypes.STRING,
@@ -39,27 +43,15 @@ module.exports = (sequelize, DataTypes) => {
         username: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true
         },
         password: {
             type: DataTypes.STRING,
             allowNull: false
         },
-        roles: {
-            type: DataTypes.ARRAY(DataTypes.STRING),
-            allowNull: false,
-        }
-
-        /* roles: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            get() {
-                return this.getDataValue('favColors').split(';')
-            },
-            set(val) {
-                this.setDataValue('favColors', val.join(';'));
-            },
-        } */
+        // metiers: {
+        //     type: DataTypes.ARRAY(DataTypes.STRING),
+        //     allowNull: false,
+        // }
     }, {
         sequelize,
         modelName: 'User',

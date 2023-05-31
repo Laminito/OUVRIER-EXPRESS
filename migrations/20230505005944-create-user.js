@@ -40,20 +40,10 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: false
             },
-            /*  roles: {
-                 type: Sequelize.STRING,
-                 allowNull: false,
-                 get() {
-                     return this.getDataValue('roles').split(';')
-                 },
-                 set(val) {
-                     this.setDataValue('roles', val.join(';'));
-                 },
-             }, */
-            roles: {
-                type: Sequelize.ARRAY(Sequelize.STRING),
-                allowNull: false,
-            },
+            // metiers: {
+            //     type: Sequelize.ARRAY(Sequelize.STRING),
+            //     allowNull: false,
+            // },
             createdAt: {
                 allowNull: false,
                 type: Sequelize.DATE,
@@ -66,22 +56,28 @@ module.exports = {
             }
         });
         await queryInterface.bulkInsert('Users', [{
+                prenom: "Adama",
+                nom: "Cissé",
+                telephone: "77531285",
+                cni: "1945201301869",
+                username: "luthio",
+                password: "passer123",
+            },
+            {
                 prenom: "Mohamed",
                 nom: "Ba",
                 telephone: "783703310",
-                cni: "1945201301869",
+                cni: "1945201301879",
                 username: "Lamino",
                 password: "passer123",
-                roles: ["ROLE_ADMIN"]
             },
             {
                 prenom: "Ablaye",
                 nom: "Mangane",
                 telephone: "773703310",
-                cni: "1945199401869",
+                cni: "1945199498869",
                 username: "abdalah",
                 password: "passer123",
-                roles: ["ROLE_CLIENT"]
             },
         ])
     },

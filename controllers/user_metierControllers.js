@@ -1,38 +1,31 @@
 //importcd
 const models = require("../models");
 const { Op } = require("sequelize");
-
-
 module.exports = {
 
-    getUsers: (req, res) => {
-        models.User.findAll({
+    getAllUsers_Metiers: (req, res) => {
+        models.User_Metier.findAll({
             attributes: [
                 'id',
-                'prenom',
-                'nom',
-                'telephone',
-                'cni',
-                'username',
-                'password'
-
+                'UserId',
+                'StatutId'
             ],
-            where: { etat: true },
+            where: { disponible: true },
             order: [
                 ['id', 'ASC']
             ]
-        }).then((users) => {
-            console.log("users : ", users);
+        }).then((user_metier) => {
+            console.log("user_metier : ", user_metier);
 
             return res.status(200).json({
                 success: true,
-                message: "request get All Users successfully",
-                results: users
+                message: "request get All User_Metier successfully",
+                results: user_metier
             })
         }).catch((err) => {
             return res.status(500).json({
                 success: false,
-                message: "failed get All Users request",
+                message: "failed get All User_Metier request",
                 results: err
             })
         })
