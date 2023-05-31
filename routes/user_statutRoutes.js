@@ -6,6 +6,6 @@ const router = express.Router();
 
 const userRouter = new express.Router();
 
-userRouter.get('/users-statuts/', user_statutCtrl.getAllUsers_Statuts);
+userRouter.get('/users/statuts/', user_statutCtrl.getAllUsers_Statuts);
 
 module.exports = userRouter

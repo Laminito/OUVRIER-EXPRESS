@@ -2,14 +2,14 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
     async up(queryInterface, Sequelize) {
-        await queryInterface.createTable('User_Statuts', {
+        await queryInterface.createTable('userMetiers', {
             id: {
                 allowNull: false,
                 autoIncrement: true,
                 primaryKey: true,
                 type: Sequelize.INTEGER
             },
-            etat: {
+            disponible: {
                 type: Sequelize.BOOLEAN,
                 defaultValue: true
             },
@@ -20,10 +20,10 @@ module.exports = {
                     key: 'id'
                 }
             },
-            StatutId: {
+            MetierId: {
                 type: Sequelize.INTEGER,
                 references: {
-                    model: 'Statuts',
+                    model: 'Metiers',
                     key: 'id'
                 }
             },
@@ -38,22 +38,18 @@ module.exports = {
                 defaultValue: new Date()
             }
         });
-        await queryInterface.bulkInsert('User_Statuts', [{
-                UserId: 1,
-                StatutId: 1
-            },
-            {
+        await queryInterface.bulkInsert('userMetiers', [{
                 UserId: 2,
-                StatutId: 2
+                MetierId: 2
             },
             {
                 UserId: 3,
-                StatutId: 2
+                MetierId: 2
             }
         ])
 
     },
     async down(queryInterface, Sequelize) {
-        await queryInterface.dropTable('User_Statuts');
+        await queryInterface.dropTable('userMetiers');
     }
 };

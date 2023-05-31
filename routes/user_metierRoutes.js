@@ -6,6 +6,6 @@ const router = express.Router();
 
 const userRouter = new express.Router();
 
-userRouter.get('/users-metiers/', user_metierCtrl.getAllUsers_Metiers);
+userRouter.get('/users/metiers/', user_metierCtrl.getAllUsers_Metiers);
 
 module.exports = userRouter

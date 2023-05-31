@@ -12,6 +12,7 @@ module.exports = (sequelize, DataTypes) => {
         static associate(models) {
             // define association here
             this.hasMany(models.User_Statut);
+            this.hasMany(models.userMetier);
 
         }
     }
@@ -48,10 +49,6 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false
         },
-        // metiers: {
-        //     type: DataTypes.ARRAY(DataTypes.STRING),
-        //     allowNull: false,
-        // }
     }, {
         sequelize,
         modelName: 'User',

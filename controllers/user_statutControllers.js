@@ -6,13 +6,28 @@ module.exports = {
         models.User_Statut.findAll({
             attributes: [
                 'id',
-                'UserId',
-                'StatutId',
             ],
             where: { etat: true },
+
             order: [
                 ['id', 'ASC']
-            ]
+            ],
+            include: [{
+                    model: models.Statut,
+                    attributes: ['role']
+                },
+                {
+                    model: models.User,
+                    attributes: [
+                        'id',
+                        'prenom',
+                        'nom',
+                        'telephone',
+                        'cni',
+                        'username',
+                    ]
+                }
+            ],
         }).then((user_metier) => {
             console.log("user_statut : ", user_metier);
             return res.status(200).json({

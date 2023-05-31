@@ -20,7 +20,8 @@ module.exports = {
             where: { etat: true },
             order: [
                 ['id', 'ASC']
-            ]
+            ],
+
         }).then((users) => {
             console.log("users : ", users);
 

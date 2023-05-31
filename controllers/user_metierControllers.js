@@ -4,16 +4,30 @@ const { Op } = require("sequelize");
 module.exports = {
 
     getAllUsers_Metiers: (req, res) => {
-        models.User_Metier.findAll({
+        models.userMetier.findAll({
             attributes: [
                 'id',
-                'UserId',
-                'StatutId'
             ],
             where: { disponible: true },
             order: [
                 ['id', 'ASC']
-            ]
+            ],
+            include: [{
+                    model: models.User,
+                    attributes: [
+                        'id',
+                        'prenom',
+                        'nom',
+                        'telephone',
+                        'cni',
+                        'username',
+                    ]
+                },
+                {
+                    model: models.Metiers,
+                    attributes: ['id', 'libelle']
+                },
+            ],
         }).then((user_metier) => {
             console.log("user_metier : ", user_metier);
 
