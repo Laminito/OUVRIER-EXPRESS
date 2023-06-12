@@ -49,6 +49,30 @@ module.exports = {
             {
                 UserId: 3,
                 StatutId: 2
+            },
+            {
+                UserId: 4,
+                StatutId: 2
+            },
+            {
+                UserId: 5,
+                StatutId: 2
+            },
+            {
+                UserId: 6,
+                StatutId: 2
+            },
+            {
+                UserId: 7,
+                StatutId: 2
+            },
+            {
+                UserId: 8,
+                StatutId: 2
+            },
+            {
+                UserId: 9,
+                StatutId: 2
             }
         ])
 

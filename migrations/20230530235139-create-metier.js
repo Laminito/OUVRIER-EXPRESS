@@ -28,24 +28,68 @@ module.exports = {
             }
         });
         await queryInterface.bulkInsert('Metiers', [{
-                libelle: 'macon'
+                libelle: 'maçon professionnel',
+            },
+            {
+                libelle: 'maçon manoeuvre',
             },
             {
                 libelle: 'menuisier'
             },
             {
-                libelle: 'soudeur'
+                libelle: 'electricien batiment'
             },
             {
-                libelle: 'electricien'
+                libelle: 'electricien voiture poids lourds'
             },
             {
-                libelle: 'mecanicien'
+                libelle: 'electricien voiture poids legers'
+            },
+            {
+                libelle: 'mecanicien poids lourds'
+            },
+            {
+                libelle: 'mecanicien poids legers'
             },
             {
                 libelle: 'plombier'
+            },
+            {
+                libelle: 'chauffeur poids lourds'
+            },
+            {
+                libelle: 'chauffeur poids legers'
+            },
+            {
+                libelle: 'mouleur de brique'
+            },
+            {
+                libelle: 'femme de chamnre'
+            },
+            {
+                libelle: 'cuisinier(e)'
+            },
+            {
+                libelle: 'nounou'
+            },
+            {
+                libelle: 'peintre batiment'
+            },
+            {
+                libelle: 'peintre voiture'
+            },
+            {
+                libelle: 'soudeur metallique'
+            },
+            {
+                libelle: 'soudeur aluminium'
+            },
+            {
+                libelle: 'gardinage'
+            },
+            {
+                libelle: 'vulganisateur'
             }
-
         ])
     },
     async down(queryInterface, Sequelize) {

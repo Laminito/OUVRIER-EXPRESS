@@ -3,6 +3,13 @@ const {
     Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
+    const bcrypt = require("bcryptjs")
+    const defaultpass = "passer"
+    async function hash(password) {
+        const passwprdHash = await bcrypt.hash(password, 10);
+
+        return passwprdHash;
+    }
     class User extends Model {
         /**
          * Helper method for defining associations.
@@ -47,7 +54,14 @@ module.exports = (sequelize, DataTypes) => {
         },
         password: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            defaultValue: hash(defaultpass)
+        },
+        avatar: {
+            type: DataTypes.BLOB,
+            get() {
+                return this.getDataValue('avatar').toString('utf8'); // or whatever encoding is right
+            },
         },
     }, {
         sequelize,

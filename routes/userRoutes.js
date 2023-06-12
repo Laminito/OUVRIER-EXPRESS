@@ -7,5 +7,6 @@ const router = express.Router();
 const userRouter = new express.Router();
 
 userRouter.get('/users/', userCtrl.getUsers);
+userRouter.get('/users/:id', userCtrl.getUserById);
 
 module.exports = userRouter
