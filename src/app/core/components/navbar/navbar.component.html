@@ -1,0 +1,71 @@
+<nav class="navbar  fixed-top">
+    <div class="container-fluid">
+      <h1><a class="text-decoration-none text-wrap text-success text-capitalize text-l">OuvrierExpress</a></h1>
+      <form class="d-flex" role="search">
+        <button type="button" class="me-2 btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop2">se connecter</button>
+        <button class="btn btn-outline-success btn-lg" data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button">S'inscrire</button>
+      </form>
+    </div>
+  </nav>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center" id="staticBackdropLabel">Inscrivez-Vous</h1>
+        <button  class="text-light" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="Inscrire()">Understood</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+
+<!--Modal2 -->
+<div class="modal fade" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-center">Connecter vous</h1>
+        <button  class="text-light" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control"aria-describedby="emailHelp">
+            <div  class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary" (click)="Connecter()">Connecter</button>
+      </div>
+    </div>
+
+
+  </div>
+</div>
